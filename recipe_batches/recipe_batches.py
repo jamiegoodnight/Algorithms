@@ -9,7 +9,7 @@ def recipe_batches(recipe, ingredients):
         return batches
 
     for key in recipe:
-        if batches > 0 and ingredients[key]/recipe[key] > batches:
+        if batches > 1 and ingredients[key]/recipe[key] > batches:
             break
 
         if recipe[key] <= ingredients[key]:
@@ -17,7 +17,7 @@ def recipe_batches(recipe, ingredients):
 
         if recipe[key] > ingredients[key]:
             print("We're in 2", key)
-            batches = 0
+            return 0
 
     return round(batches)
 
